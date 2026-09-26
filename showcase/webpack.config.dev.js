@@ -1,4 +1,4 @@
-const merge = require("webpack-merge");
+const { merge } = require("webpack-merge");
 const baseConfig = require("./webpack.config.base");
 
 module.exports = merge(baseConfig, {
@@ -6,9 +6,11 @@ module.exports = merge(baseConfig, {
   devServer: {
     port: 4646,
     open: true,
-    overlay: {
-      warnings: true,
-      errors: true
+    client: {
+      overlay: {
+        warnings: true,
+        errors: true
+      }
     },
     historyApiFallback: true,
     hot: true
